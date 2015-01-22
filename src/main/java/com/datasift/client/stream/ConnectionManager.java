@@ -119,7 +119,7 @@ public class ConnectionManager {
         }
     }
 
-    public ConnectionManager subscribe(final StreamSubscription subscription) {
+    public synchronized ConnectionManager subscribe(final StreamSubscription subscription) {
         if (errorListener == null) {
             throw new IllegalStateException("You must call listen before subscribing to streams otherwise you'll miss" +
                     " any exceptions that may occur");
